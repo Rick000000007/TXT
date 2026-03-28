@@ -104,7 +104,7 @@ class TerminalService : Service() {
         return NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setContentTitle("TX Terminal")
             .setContentText("Terminal session is active")
-            .setSmallIcon(android.R.drawable.ic_menu_terminal)
+            .setSmallIcon(android.R.drawable.sym_def_app_icon)
             .setContentIntent(pendingIntent)
             .setOngoing(true)
             .setSilent(true)
