@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="12dp"
+    android:paddingEnd="8dp"
+    android:background="@drawable/tab_background_inactive"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Running indicator dot -->
+    <View
+        android:id="@+id/running_indicator"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/running_indicator"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <!-- Session name -->
+    <TextView
+        android:id="@+id/tv_session_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Session 1"
+        android:textColor="@color/tab_inactive"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxWidth="100dp" />
+
+    <!-- Close button -->
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

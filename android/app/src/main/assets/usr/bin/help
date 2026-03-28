@@ -1,0 +1,49 @@
+#!/system/bin/sh
+# TX Terminal Help Script
+
+cat << 'EOF'
+═══════════════════════════════════════════════════════════════
+                    TX Terminal - Help
+═══════════════════════════════════════════════════════════════
+
+Built-in Commands:
+  help              Show this help message
+  clear             Clear the terminal screen
+  exit              Exit the terminal
+
+Userspace Commands:
+  hello             Run the hello program
+  hello -n NAME     Greet someone by name
+  hello --env       Show environment variables
+  setup-tx-storage  Set up storage integration
+
+System Commands:
+  ls                List directory contents
+  cd DIR            Change directory
+  pwd               Print working directory
+  cat FILE          Display file contents
+  echo TEXT         Print text
+  ps                List processes
+  top               Show system processes
+  df                Show disk usage
+  du                Show directory usage
+
+Storage Locations:
+  ~/storage/shared     - Main storage (/sdcard)
+  ~/storage/downloads  - Downloads folder
+  ~/storage/documents  - Documents folder
+
+Environment Variables:
+  $HOME         - Home directory
+  $TMPDIR       - Temporary directory
+  $PATH         - Executable search path
+  $LD_LIBRARY_PATH - Library search path
+
+Navigation:
+  Up/Down arrows    - Command history
+  Tab               - Tab completion
+  Ctrl+C            - Interrupt process
+  Ctrl+D            - End of input
+
+═══════════════════════════════════════════════════════════════
+EOF

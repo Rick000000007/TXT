@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TX Terminal</string>
+    <string name="settings_title">Settings</string>
+    <string name="terminal_hint">Type a command…</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_keyboard">Toggle Keyboard</string>
+    <string name="welcome_message">TX Terminal v1.1.0\nType \'help\' for available commands\n</string>
+    <string name="userspace_ready">Userspace initialized successfully!</string>
+    <string name="userspace_error">Failed to initialize userspace</string>
+
+    <!-- Session -->
+    <string name="new_session">New Session</string>
+    <string name="close_session">Close Session</string>
+    <string name="session_default">Session %d</string>
+
+    <!-- Context Menu -->
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="select_all">Select All</string>
+
+    <!-- Settings -->
+    <string name="pref_userspace_title">Enable Userspace</string>
+    <string name="pref_userspace_summary">Use custom userspace binaries</string>
+    <string name="pref_wake_lock_title">Keep Terminal Awake</string>
+    <string name="pref_wake_lock_summary">Prevent screen timeout while terminal is active</string>
+    <string name="pref_font_size_title">Font Size</string>
+    <string name="pref_cursor_style_title">Cursor Style</string>
+</resources>

@@ -1,0 +1,43 @@
+#!/system/bin/sh
+# TX Terminal Info Script
+# Displays system and TX Terminal information
+
+echo "═══════════════════════════════════════════════════════════════"
+echo "                    TX Terminal System Info"
+echo "═══════════════════════════════════════════════════════════════"
+echo ""
+
+echo "📱 Device Information:"
+echo "───────────────────────────────────────────────────────────────"
+echo "  Device:     $(getprop ro.product.model 2>/dev/null || echo 'Unknown')"
+echo "  Manufacturer: $(getprop ro.product.manufacturer 2>/dev/null || echo 'Unknown')"
+echo "  Android:    $(getprop ro.build.version.release 2>/dev/null || echo 'Unknown')"
+echo "  SDK:        $(getprop ro.build.version.sdk 2>/dev/null || echo 'Unknown')"
+echo "  ABI:        $(getprop ro.product.cpu.abi 2>/dev/null || echo 'Unknown')"
+echo ""
+
+echo "🔧 TX Terminal Information:"
+echo "───────────────────────────────────────────────────────────────"
+echo "  Version:    1.0.0"
+echo "  Userspace:  $([ -d /data/user/0/com.tx.terminal/files/usr ] && echo 'Installed' || echo 'Not installed')"
+echo "  Home:       $HOME"
+echo "  Tmp:        $TMPDIR"
+echo ""
+
+echo "📁 Storage Status:"
+echo "───────────────────────────────────────────────────────────────"
+if [ -d ~/storage/shared ]; then
+    echo "  Shared:     ✓ Linked"
+else
+    echo "  Shared:     ✗ Not linked (run setup-tx-storage)"
+fi
+
+if [ -d ~/storage/downloads ]; then
+    echo "  Downloads:  ✓ Linked"
+else
+    echo "  Downloads:  ✗ Not linked (run setup-tx-storage)"
+fi
+
+echo ""
+
+echo 

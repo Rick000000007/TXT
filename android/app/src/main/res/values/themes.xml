@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TX Terminal - Monochrome Dark Theme -->
+    <style name="Theme.TXTerminal" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Force dark theme -->
+        <item name="android:forceDarkAllowed">false</item>
+
+        <!-- Colors -->
+        <item name="colorPrimary">@color/foreground_primary</item>
+        <item name="colorPrimaryDark">@color/background_primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSurface">@color/background_secondary</item>
+        <item name="colorOnSurface">@color/foreground_primary</item>
+        <item name="colorSurfaceVariant">@color/background_tertiary</item>
+        <item name="colorOnSurfaceVariant">@color/foreground_secondary</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/background_primary</item>
+        <item name="android:colorBackground">@color/background_primary</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/background_primary</item>
+        <item name="android:navigationBarColor">@color/background_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/foreground_primary</item>
+        <item name="android:textColorSecondary">@color/foreground_secondary</item>
+        <item name="android:textColorHint">@color/foreground_tertiary</item>
+
+        <!-- Action Bar / Toolbar -->
+        <item name="actionBarStyle">@style/TXTerminal.ActionBar</item>
+        <item name="toolbarStyle">@style/TXTerminal.Toolbar</item>
+
+        <!-- Popup Menu -->
+        <item name="popupMenuStyle">@style/TXTerminal.PopupMenu</item>
+
+        <!-- Dialog -->
+        <item name="alertDialogTheme">@style/TXTerminal.Dialog</item>
+    </style>
+
+    <!-- Action Bar Style -->
+    <style name="TXTerminal.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@color/background_primary</item>
+        <item name="titleTextStyle">@style/TXTerminal.ActionBar.Title</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="TXTerminal.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/background_primary</item>
+        <item name="titleTextColor">@color/foreground_primary</item>
+        <item name="subtitleTextColor">@color/foreground_secondary</item>
+    </style>
+
+    <!-- Action Bar Title -->
+    <style name="TXTerminal.ActionBar.Title" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/foreground_primary</item>
+    </style>
+
+    <!-- Popup Menu Style -->
+    <style name="TXTerminal.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/background_secondary</item>
+    </style>
+
+    <!-- Dialog Theme -->
+    <style name="TXTerminal.Dialog" parent="Theme.Material3.Dark.Dialog">
+        <item name="colorPrimary">@color/foreground_primary</item>
+        <item name="colorSurface">@color/background_secondary</item>
+        <item name="android:windowBackground">@color/background_secondary</item>
+    </style>
+
+    <!-- Tab Style -->
+    <style name="TXTerminal.Tab" parent="Widget.Material3.TabLayout">
+        <item name="tabBackground">@color/tab_background</item>
+        <item name="tabTextColor">@color/tab_inactive</item>
+        <item name="tabSelectedTextColor">@color/tab_active</item>
+        <item name="tabIndicatorColor">@color/tab_active</item>
+        <item name="tabIndicatorHeight">2dp</item>
+    </style>
+
+    <!-- Virtual Key Style -->
+    <style name="TXTerminal.VirtualKey" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/key_background</item>
+        <item name="android:textColor">@color/foreground_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cursor_styles">
+        <item>Block</item>
+        <item>Line</item>
+        <item>Underline</item>
+    </string-array>
+
+    <string-array name="cursor_style_values">
+        <item>block</item>
+        <item>line</item>
+        <item>underline</item>
+    </string-array>
+</resources>

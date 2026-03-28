@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="Terminal Settings"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="use_userspace"
+            android:title="@string/pref_userspace_title"
+            android:summary="@string/pref_userspace_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="wake_lock"
+            android:title="@string/pref_wake_lock_title"
+            android:summary="@string/pref_wake_lock_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="font_size"
+            android:title="@string/pref_font_size_title"
+            android:defaultValue="14"
+            android:min="8"
+            android:max="32"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="cursor_style"
+            android:title="@string/pref_cursor_style_title"
+            android:defaultValue="block"
+            android:entries="@array/cursor_styles"
+            android:entryValues="@array/cursor_style_values"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="About"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="version"
+            android:title="Version"
+            android:summary="1.1.0"
+            app:iconSpaceReserved="false"
+            android:selectable="false" />
+
+        <Preference
+            android:key="about"
+            android:title="TX Terminal"
+            android:summary="Advanced terminal emulator with multi-session support"
+            app:iconSpaceReserved="false"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

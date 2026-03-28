@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_copy"
+        android:title="Copy"
+        android:orderInCategory="100" />
+
+    <item
+        android:id="@+id/action_paste"
+        android:title="Paste"
+        android:orderInCategory="200" />
+
+    <item
+        android:id="@+id/action_select_all"
+        android:title="Select All"
+        android:orderInCategory="300" />
+
+</menu>

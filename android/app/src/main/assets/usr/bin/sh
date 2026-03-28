@@ -1,0 +1,21 @@
+#!/system/bin/sh
+# TX Terminal Shell Wrapper
+# Wraps the system shell with custom environment setup
+
+# Set up environment
+export HOME=${HOME:-/data/user/0/com.tx.terminal/files/usr/home}
+export TMPDIR=${TMPDIR:-/data/user/0/com.tx.terminal/files/usr/tmp}
+export PATH="/data/user/0/com.tx.terminal/files/usr/bin:/system/bin:/vendor/bin"
+export LD_LIBRARY_PATH="/data/user/0/com.tx.terminal/files/usr/lib:/system/lib64:/vendor/lib64"
+export TERM=xterm-256color
+export SHELL=/system/bin/sh
+
+# Create home and tmp if they don't exist
+[ -d "$HOME" ] || mkdir -p "$HOME"
+[ -d "$TMPDIR" ] || mkdir -p "$TMPDIR"
+
+# Change to home directory
+cd "$HOME"
+
+# Execute the real shell with remaining arguments
+exec /system/bin/sh "$@"

@@ -1,0 +1,78 @@
+#!/system/bin/sh
+# TX Terminal Storage Setup Script
+# Sets up storage integration for TX Terminal
+
+echo "🔧 Setting up TX storage..."
+
+# Base directory for TX Terminal
+BASE=/data/user/0/com.tx.terminal/files
+
+# Create storage directories
+echo "Creating storage directories..."
+mkdir -p $BASE/storage/shared
+mkdir -p $BASE/storage/downloads
+mkdir -p $BASE/storage/documents
+mkdir -p $BASE/storage/pictures
+mkdir -p $BASE/storage/music
+mkdir -p $BASE/storage/movies
+
+# Create symlinks to common Android paths
+echo "Creating symlinks..."
+
+# Main storage
+if [ -d /sdcard ]; then
+    ln -sf /sdcard $BASE/storage/shared
+    echo "  ✓ Linked /sdcard -> ~/storage/shared"
+fi
+
+# Downloads
+if [ -d /sdcard/Download ]; then
+    ln -sf /sdcard/Download $BASE/storage/downloads
+    echo "  ✓ Linked /sdcard/Download -> ~/storage/downloads"
+fi
+
+# Documents
+if [ -d /sdcard/Documents ]; then
+    ln -sf /sdcard/Documents $BASE/storage/documents
+    echo "  ✓ Linked /sdcard/Documents -> ~/storage/documents"
+fi
+
+# Pictures
+if [ -d /sdcard/Pictures ]; then
+    ln -sf /sdcard/Pictures $BASE/storage/pictures
+    echo "  ✓ Linked /sdcard/Pictures -> ~/storage/pictures"
+fi
+
+# Music
+if [ -d /sdcard/Music ]; then
+    ln -sf /sdcard/Music $BASE/storage/music
+    echo "  ✓ Linked /sdcard/Music -> ~/storage/music"
+fi
+
+# Movies
+if [ -d /sdcard/Movies ]; then
+    ln -sf /sdcard/Movies $BASE/storage/movies
+    echo "  ✓ Linked /sdcard/Movies -> ~/storage/movies"
+fi
+
+# Set permissions
+echo "Setting permissions..."
+chmod -R 755 $BASE/storage
+
+# Create .nomedia file to prevent media scanning
+# (optional, uncomment if needed)
+# touch $BASE/storage/.nomedia
+
+echo ""
+echo "✅ Storage setup complete!"
+echo ""
+echo "📁 Access your storage via:"
+echo "   ~/storage/shared     - Main storage (/sdcard)"
+echo "   ~/storage/downloads  - Downloads folder"
+echo "   ~/storage/documents  - Documents folder"
+echo "   ~/storage/pictures   - Pictures folder"
+echo "   ~/storage/music      - Music folder"
+echo "   ~/storage/movies     - Movies folder"
+echo ""
+echo "💡 Tip: Use 'ls -la ~/storage' to see all available storage locations"
+echo ""

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_primary"
+        android:elevation="0dp">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background_primary"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/foreground_primary"
+            app:menu="@menu/main_menu" />
+
+        <!-- Session Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/background_secondary"
+            android:gravity="center_vertical">
+
+            <!-- Tab Scroll -->
+            <HorizontalScrollView
+                android:id="@+id/tab_scroll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <LinearLayout
+                    android:id="@+id/tab_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+            <!-- New Tab Button -->
+            <ImageButton
+                android:id="@+id/btn_new_tab"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_add"
+                android:contentDescription="New Session" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Terminal View -->
+        <com.tx.terminal.view.TerminalView
+            android:id="@+id/terminal_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/terminal_bg"
+            android:padding="8dp" />
+
+        <!-- Virtual Key Bar -->
+        <com.tx.terminal.view.VirtualKeyBar
+            android:id="@+id/virtual_key_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/keybar_bg"
+            android:visibility="gone" />
+
+        <!-- Input Area -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/input_bg"
+            android:padding="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Prompt -->
+            <TextView
+                android:id="@+id/prompt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ "
+                android:textColor="@color/foreground_primary"
+                android:textSize="14sp"
+                android:fontFamily="monospace" />
+
+            <!-- Command Input -->
+            <EditText
+                android:id="@+id/command_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:textColor="@color/foreground_primary"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:hint="@string/terminal_hint"
+                android:textColorHint="@color/input_hint"
+                android:inputType="text|textNoSuggestions"
+                android:imeOptions="actionDone"
+                android:singleLine="true" />
+
+            <!-- Toggle Virtual Keys -->
+            <ImageButton
+                android:id="@+id/btn_toggle_keys"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_keyboard"
+                android:contentDescription="Toggle Virtual Keys" />
+
+            <!-- Execute Button -->
+            <ImageButton
+                android:id="@+id/execute_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_send"
+                android:contentDescription="Execute" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

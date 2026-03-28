@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Monochrome Palette - Black/White/Grey -->
+
+    <!-- Background Colors -->
+    <color name="background_primary">#000000</color>
+    <color name="background_secondary">#111111</color>
+    <color name="background_tertiary">#1A1A1A</color>
+
+    <!-- Foreground Colors -->
+    <color name="foreground_primary">#FFFFFF</color>
+    <color name="foreground_secondary">#CCCCCC</color>
+    <color name="foreground_tertiary">#888888</color>
+
+    <!-- Accent (white for monochrome) -->
+    <color name="accent">#FFFFFF</color>
+    <color name="accent_dim">#AAAAAA</color>
+
+    <!-- Selection Colors -->
+    <color name="selection_background">#FFFFFF</color>
+    <color name="selection_text">#000000</color>
+
+    <!-- Terminal Specific -->
+    <color name="terminal_bg">#000000</color>
+    <color name="terminal_fg">#FFFFFF</color>
+    <color name="terminal_cursor">#FFFFFF</color>
+    <color name="terminal_selection_bg">#FFFFFF</color>
+    <color name="terminal_selection_fg">#000000</color>
+
+    <!-- UI Elements -->
+    <color name="tab_active">#FFFFFF</color>
+    <color name="tab_inactive">#666666</color>
+    <color name="tab_background">#111111</color>
+    <color name="keybar_bg">#1A1A1A</color>
+    <color name="keybar_key_bg">#333333</color>
+    <color name="keybar_key_pressed">#555555</color>
+    <color name="divider">#333333</color>
+    <color name="input_bg">#111111</color>
+    <color name="input_hint">#666666</color>
+
+    <!-- Legacy compatibility -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="color_primary">#FFFFFF</color>
+    <color name="color_primary_dark">#000000</color>
+    <color name="color_accent">#FFFFFF</color>
+</resources>
