@@ -30,7 +30,7 @@ import kotlinx.coroutines.launch
  * - Virtual key bar
  * - Modern monochrome UI
  */
-class MainActivity : AppCompatActivity(), TerminalView.OnKeyListener {
+class MainActivity : AppCompatActivity() {
 
     // UI Components
     private lateinit var toolbar: Toolbar
@@ -376,9 +376,7 @@ class MainActivity : AppCompatActivity(), TerminalView.OnKeyListener {
         terminalView.appendText(helpText + "\n")
     }
 
-    override fun onKey(keyCode: Int, ctrl: Boolean) {
         // Handle keys from TerminalView
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
