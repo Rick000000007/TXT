@@ -13,13 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug files
-        run: |
-          pwd
-          ls -la
-          cd android
-          ls -la
-
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
@@ -29,11 +22,16 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build APK (verbose)
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Build APK (fixed)
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace --info
+          ./gradlew --version
+          ./gradlew clean
+          ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
