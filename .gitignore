@@ -3,3 +3,4 @@ build/
 .cxx/
 local.properties
 *.apk
+android/*.zip

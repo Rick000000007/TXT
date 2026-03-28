@@ -373,7 +373,7 @@ bool TerminalEngine::executeCommand(const std::string& command) {
             inQuote = false;
             quoteChar = 0;
         } else if (!inQuote && c == ' ') {
-            if (!current.isEmpty()) {
+            if (!current.empty()) {
                 tokens.push_back(current);
                 current.clear();
             }
