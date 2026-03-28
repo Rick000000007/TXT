@@ -331,18 +331,18 @@ class MainActivity : AppCompatActivity(), TerminalView.OnKeyListener {
     }
 
     private fun navigateHistory(direction: Int) {
-        if (commandHistory.isEmpty()) return
+    if (commandHistory.isEmpty()) return
 
-	        historyIndex += direction
-        historyIndex = historyIndex.coerceIn(0, commandHistory.size)
+    historyIndex += direction
+    historyIndex = historyIndex.coerceIn(0, commandHistory.size - 1)
 
-            commandInput.setText(commandHistory[historyIndex])
-            commandInput.setSelection(commandInput.text.length)
-        } else {
-            commandInput.text.clear()
-        }
+    if (historyIndex in commandHistory.indices) {
+        commandInput.setText(commandHistory[historyIndex])
+        commandInput.setSelection(commandInput.text.length)
+    } else {
+        commandInput.text.clear()
     }
-
+}
     private fun toggleVirtualKeys() {
         virtualKeyBar.visibility = if (virtualKeyBar.visibility == View.VISIBLE) {
             View.GONE
