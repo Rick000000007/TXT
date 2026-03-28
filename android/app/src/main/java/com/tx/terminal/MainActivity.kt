@@ -87,7 +87,9 @@ class MainActivity : AppCompatActivity() {
 
         // Terminal view
         terminalView = findViewById(R.id.terminal_view)
-        terminalView.setOnKeyListener(this)
+        terminalView.setOnKeyListener { keyCode, ctrl ->
+    handleVirtualKey(keyCode, ctrl)
+}
 
         // Command input
         commandInput = findViewById(R.id.command_input)
@@ -174,6 +176,7 @@ class MainActivity : AppCompatActivity() {
             VirtualKeyBar.KeyType.DOWN -> sendInput("\u001B[B")
             VirtualKeyBar.KeyType.LEFT -> sendInput("\u001B[D")
             VirtualKeyBar.KeyType.RIGHT -> sendInput("\u001B[C")
+            else -> {}
         }
     }
 
