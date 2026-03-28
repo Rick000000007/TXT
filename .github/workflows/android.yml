@@ -22,20 +22,24 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build APK (debug)
+      - name: Build APK
         run: |
-          set -x
           cd android
-
-          sed -i 's/\r$//' gradlew
           chmod +x gradlew
-
-          bash gradlew --version
-          bash gradlew clean
-          bash gradlew assembleDebug --stacktrace
+          ./gradlew clean
+          ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: TX-Terminal-APK
           path: android/app/build/outputs/apk/debug/*.apk
+
+
+
+
+
+
+
+
+
