@@ -1,28 +1,41 @@
-- name: Build APK (full debug)
-  run: |
-    set -x   # 🔥 SHOW EVERY COMMAND
+name: Build APK
 
-    cd android
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
-    echo "PWD:"
-    pwd
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    echo "FILES:"
-    ls -la
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    echo "Checking gradlew:"
-    file gradlew
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
 
-    echo "Fix line endings:"
-    sed -i 's/\r$//' gradlew
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
 
-    chmod +x gradlew
+      - name: Build APK (debug)
+        run: |
+          set -x
+          cd android
 
-    echo "RUN gradlew version:"
-    bash -x gradlew --version || echo "gradlew version failed"
+          sed -i 's/\r$//' gradlew
+          chmod +x gradlew
 
-    echo "RUN clean:"
-    bash -x gradlew clean || echo "clean failed"
+          bash gradlew --version
+          bash gradlew clean
+          bash gradlew assembleDebug --stacktrace
 
-    echo "RUN build:"
-    bash -x gradlew assembleDebug --stacktrace || echo "build failed"
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TX-Terminal-APK
+          path: android/app/build/outputs/apk/debug/*.apk
