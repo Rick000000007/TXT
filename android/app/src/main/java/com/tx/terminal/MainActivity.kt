@@ -6,7 +6,6 @@ import android.view.View
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.HorizontalScrollView
@@ -285,11 +284,11 @@ class MainActivity : AppCompatActivity(), TerminalView.OnKeyListener {
 
         if (!success) {
             runOnUiThread {
-                terminalView.appendText("Warning: Could not start shell\n")
+	                terminalView.appendText("Warning: Could not start shell\n")
             }
         }
     }
-
+	
     private fun executeCurrentCommand() {
         val command = commandInput.text.toString().trim()
         if (command.isEmpty()) return
@@ -334,10 +333,9 @@ class MainActivity : AppCompatActivity(), TerminalView.OnKeyListener {
     private fun navigateHistory(direction: Int) {
         if (commandHistory.isEmpty()) return
 
-        historyIndex += direction
+	        historyIndex += direction
         historyIndex = historyIndex.coerceIn(0, commandHistory.size)
 
-        if (historyIndex < commandHistory.size) {
             commandInput.setText(commandHistory[historyIndex])
             commandInput.setSelection(commandInput.text.length)
         } else {
