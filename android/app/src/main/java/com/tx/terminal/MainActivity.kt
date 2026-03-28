@@ -87,8 +87,8 @@ class MainActivity : AppCompatActivity() {
 
         // Terminal view
         terminalView = findViewById(R.id.terminal_view)
-        terminalView.setOnKeyListener { keyCode, ctrl ->
-    handleVirtualKey(keyCode, ctrl)
+        terminalView.setOnKeyListener { keyType, ctrl ->
+    handleVirtualKey(keyType, ctrl)
 }
 
         // Command input
