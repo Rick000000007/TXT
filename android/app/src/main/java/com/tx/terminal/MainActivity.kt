@@ -280,7 +280,7 @@ class MainActivity : AppCompatActivity() {
         val success = if (useUserspace && java.io.File(shellPath).exists()) {
             NativeTerminal.executeWithLinker(LINKER_PATH, shellPath, arrayOf("-l"))
         } else {
-            NativeTerminal.executeCommand(DEFAULT_SHELL)
+          NativeTerminal.executeCommand("/system/bin/sh -c 'cd /data/data/com.tx.terminal/files && exec sh'")            
         }
 
         if (!success) {
